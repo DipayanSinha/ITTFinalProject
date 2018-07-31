@@ -1,0 +1,37 @@
+{%  extends 'authenticate/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% block content%}
+    <h2 class="text-center">Existing Buckets</h2>
+     <div class="row">
+        <div class="col-sm">
+            <h4 class="text-center">Bucket Name</h4>
+        </div>
+        <div class="col-sm"></div>
+        <div class="col-sm">
+            <h4 class="text-center">Region</h4>
+        </div>
+     </div>
+    <br>
+    {% for bucket in buckets %}
+    <div class="row">
+        <div class="col-sm">
+                <a href="#" class="list-group-item list-group-item-action ">{{ bucket.0 }}</a>
+        </div>
+        <div class="col-sm"></div>
+
+
+        <div class="col-sm">
+                <a href="#" class="list-group-item list-group-item-action ">{{ bucket.1 }}</a>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}
+</body>
+</html>

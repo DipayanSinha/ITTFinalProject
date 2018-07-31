@@ -1,0 +1,30 @@
+{%  extends 'authenticate/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% block content%}
+    <h2 class="text-center">Java</h2>
+    <div class="card" style="width: 18rem;">
+    <div class="card-body">
+    <h5 class="card-title">Run Java Programs</h5>
+    <p class="card-text">Select a Java Program out of a list of Programs for execution</p>
+    <a href="{% url 'execute_java' %}" class="btn btn-primary">Click Here</a>
+    </div>
+    </div>
+    <br>
+     <div class="card" style="width: 18rem;">
+    <div class="card-body">
+    <h5 class="card-title">Save Java Programs</h5>
+    <p class="card-text">Upload a new program</p>
+    <a href="{% url 'run_java' %}" class="btn btn-primary">Click Here</a>
+    </div>
+    </div>
+
+{% endblock %}
+</body>
+</html>

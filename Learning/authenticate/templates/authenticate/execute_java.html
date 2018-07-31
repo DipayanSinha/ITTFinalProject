@@ -1,0 +1,26 @@
+{%  extends 'authenticate/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content%}
+    <h2 class="text-center">Execute</h2>
+    <div class="col-md-6 offset-md-3">
+     <div class="row">
+        <div class="col-sm">
+            {% for program in List %}
+                <ul class="list-group">
+                    <a href="{%url 'execution_page_java'%}?name={{ program }}" class="list-group-item list-group-item-action">{{ program }}</a>
+                </ul>
+            {% endfor %}
+            <br>
+            <a class="btn btn-primary" href="{% url 'JavaOptions' %}" role="button">Go Back</a>
+        </div>
+    </div>
+    </div>
+{% endblock %}
+</body>
+</html>

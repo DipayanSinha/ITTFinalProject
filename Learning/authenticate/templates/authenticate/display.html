@@ -1,0 +1,16 @@
+{%  extends 'authenticate/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content%}
+    <h2 class="text-center">Display</h2>
+    Program Output:
+    <br>
+    {{ display|linebreaks }}
+{% endblock %}
+</body>
+</html>

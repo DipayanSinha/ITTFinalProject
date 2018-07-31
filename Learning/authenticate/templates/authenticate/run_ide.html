@@ -1,0 +1,20 @@
+{%  extends 'authenticate/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content%}
+    <h2 class="text-center">Run IDE</h2>
+    <div class="col-md-6 offset-md-3">
+        <form method = "POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Run</button>
+        </form>
+    </div>
+{% endblock %}
+</body>
+</html>

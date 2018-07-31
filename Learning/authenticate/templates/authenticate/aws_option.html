@@ -1,0 +1,30 @@
+{%  extends 'authenticate/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% block content%}
+
+    <div class="card" style="width: 18rem;">
+    <div class="card-body">
+    <h5 class="card-title">EC2 Instances</h5>
+    <p class="card-text">List out all the running and stopped servers across different regions</p>
+    <a href="{% url 'aws' %}" class="btn btn-primary">Click Here</a>
+    </div>
+    </div>
+    <br>
+     <div class="card" style="width: 18rem;">
+    <div class="card-body">
+    <h5 class="card-title">S3 Bucket</h5>
+    <p class="card-text">List of S3 buckets</p>
+    <a href="{% url 'bucket_list' %}" class="btn btn-primary">Click Here</a>
+    </div>
+    </div>
+
+{% endblock %}
+</body>
+</html>
