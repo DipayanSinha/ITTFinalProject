@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm,UserChangeForm,PasswordChangeForm
 from .forms import SignUpForm,EditUserForm,AcceptFile,WriteCode,AcceptParameters
-from . import functions,Compile_Run,AWS_using_boto
+from . import functions,Compile_Run,AWS_using_boto,configuration
 import sys,os
 
 # Create your views here.
@@ -46,7 +46,10 @@ def run_ide(request):
         #print (request.POST['results'])
         file_name,file_classname = functions.write_temp_file(request.POST['results'])
         #DIRNAME = os.path.dirname(__file__)
-        classpath1, classpath2, upload_path = functions.read_json_file("Java")
+        classpath1 = configuration.CLASSPATH1
+        classpath2 = configuration.CLASSPATH2
+        upload_path = configuration.UPLOAD_FILES_PATH
+        #classpath1, classpath2, upload_path = functions.read_json_file("Java")
 
         sys.path.insert(0, upload_path)  # Define The Directory To Look For The File
         os.chdir(upload_path)
@@ -80,7 +83,8 @@ def powershell(request):
             parameter_value = request.POST['parameters']
             file_path=""
             try:
-                upload_file = functions.read_json_file("Powershell")
+                upload_file = configuration.UPLOAD_FILES_PATH
+                #upload_file = functions.read_json_file("Powershell")
                 file_path = upload_file + "\\"+file_name
 
                 #file_path = "G:\Romu\PycharmProjects\\"+file_name
@@ -104,7 +108,10 @@ def execution_page_java(request):
     print("Name is ", file_name)
     if (request.method == 'POST' and 'save_submit' in request.POST):
         param = AcceptParameters(request.POST)
-        classpath1, classpath2, upload_path = functions.read_json_file("Java")
+        classpath1 = configuration.CLASSPATH1
+        classpath2 = configuration.CLASSPATH2
+        upload_path = configuration.UPLOAD_FILES_PATH
+        #classpath1, classpath2, upload_path = functions.read_json_file("Java")
         sys.path.insert(0, upload_path)  # Define The Directory To Look For The File
         os.chdir(upload_path)
         parameter_value = request.POST['parameters']
@@ -144,7 +151,10 @@ def run_java(request):
         if(file.is_valid()):
             functions.handle_uploaded_file(request.FILES['file'])
             messages.success(request, 'File Uploaded Successfully')
-            classpath1,classpath2,upload_path = functions.read_json_file("Java")
+            classpath1 = configuration.CLASSPATH1
+            classpath2 = configuration.CLASSPATH2
+            upload_path = configuration.UPLOAD_FILES_PATH
+            #classpath1,classpath2,upload_path = functions.read_json_file("Java")
 
             sys.path.insert(0, upload_path)  # Define The Directory To Look For The File
             os.chdir(upload_path)

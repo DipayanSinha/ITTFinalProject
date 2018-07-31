@@ -1,11 +1,10 @@
 #!/usr/bin/env python
 import boto3
 import json
+from . import configuration
 
-with open('G:\Romu\PythonOnWeb\Learning\\authenticate\Classpath.json') as data_file:
-    data = json.load(data_file)
-    access_key = data['access_key']
-    secret_key = data['secret_key']
+access_key = configuration.ACCESS_KEY
+secret_key = configuration.SECRET_KEY
 
 def establish_connection(access_key,secret_key):
     global connection
@@ -64,6 +63,7 @@ def show_buckets():
     except:
         print("The bucket does not exist, choose how to deal with it or raise the exception: ")
     return L
+
 #show_buckets()
 #retrieve_instance_from_region("us-west-2")
 #establish_connection(access_key,secret_key)
