@@ -16,17 +16,17 @@ Installation
 Prerequisites
 ----------------
 
-Pycharm Professional Edition
-Python 3.6
+  - Pycharm Professional Edition
+  - Python 3.6
 
-Create a folder named PythonOnWeb in G Drive (or any other drive) and clone the project there
+  - Create a folder named PythonOnWeb in G Drive (or any other drive) and clone the project there
 
 ----------------
 Edit the Configuration file: congiguration.py
 ----------------
 
-CLASSPATH1 = "C:\\Program Files\\Java\\jdk1.8.0_171\\bin\\javac"
-CLASSPATH2 = "C:\\Program Files\\Java\\jdk1.8.0_171\\bin\\java"
+  - CLASSPATH1 = "C:\\Program Files\\Java\\jdk1.8.0_171\\bin\\javac"
+  - CLASSPATH2 = "C:\\Program Files\\Java\\jdk1.8.0_171\\bin\\java"
 Put the absolute path of JDK on disk
 
 The Django Project "Learning" and all other Java, Powershell files should be in this directory. Modify the path as required. 
