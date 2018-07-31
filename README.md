@@ -22,7 +22,7 @@ Prerequisites
   - Create a folder named PythonOnWeb in G Drive (or any other drive) and clone the project there
 
 ----------------
-Edit the Configuration file: congiguration.py
+Edit the Configuration file: configuration.py
 ----------------
 
   - CLASSPATH1 = "C:\\Program Files\\Java\\jdk1.8.0_171\\bin\\javac"
